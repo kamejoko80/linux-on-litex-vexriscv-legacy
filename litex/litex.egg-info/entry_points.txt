@@ -1,0 +1,10 @@
+[console_scripts]
+litex_read_verilog = litex.tools.litex_read_verilog:main
+litex_server = litex.tools.litex_server:main
+litex_sim = litex.tools.litex_sim:main
+litex_simple = litex.boards.targets.simple:main
+litex_term = litex.tools.litex_term:main
+lxserver = litex.tools.litex_server:main
+lxsim = litex.tools.litex_sim:main
+lxterm = litex.tools.litex_term:main
+
