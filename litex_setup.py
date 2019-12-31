@@ -25,20 +25,20 @@ repos = OrderedDict(repos)
 
 if len(sys.argv) < 2:
     print("Available commands:")
-    print("- init")
+    #print("- init")
     print("- install (add --user to install to user directory)")
-    print("- update")
+    #print("- update")
     exit()
 
-if "init" in sys.argv[1:]:
-    for name in repos.keys():
-        url, need_recursive, need_develop = repos[name]
-        # clone repo (recursive if needed)
-        print("[cloning " + name + "]...")
-        full_url = url + name
-        opts = "--recursive" if need_recursive else ""
-        branch = "-b custom" if name in ["litex"] else ""
-        os.system("git clone " + full_url + " " + opts + " " + branch)
+# if "init" in sys.argv[1:]:
+    # for name in repos.keys():
+        # url, need_recursive, need_develop = repos[name]
+        # # clone repo (recursive if needed)
+        # print("[cloning " + name + "]...")
+        # full_url = url + name
+        # opts = "--recursive" if need_recursive else ""
+        # branch = "-b custom" if name in ["litex"] else ""
+        # os.system("git clone " + full_url + " " + opts + " " + branch)
 
 if "install" in sys.argv[1:]:
     for name in repos.keys():
@@ -52,9 +52,9 @@ if "install" in sys.argv[1:]:
             else:
                 os.system("python3 setup.py develop")
 
-if "update" in sys.argv[1:]:
-    for name in repos.keys():
-        # update
-        print("[updating " + name + "]...")
-        os.chdir(os.path.join(current_path, name))
-        os.system("git pull")
+# if "update" in sys.argv[1:]:
+    # for name in repos.keys():
+        # # update
+        # print("[updating " + name + "]...")
+        # os.chdir(os.path.join(current_path, name))
+        # os.system("git pull")
